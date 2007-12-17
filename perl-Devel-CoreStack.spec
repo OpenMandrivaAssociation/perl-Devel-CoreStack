@@ -10,7 +10,6 @@ URL:		http://search.cpan.org/dist/Devel-CoreStack/
 Source0:	http://search.cpan.org/CPAN/authors/id/A/AD/ADESC/Devel-CoreStack-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 try to generate a stack dump from a core file.
