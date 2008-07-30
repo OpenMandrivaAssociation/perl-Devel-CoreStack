@@ -3,7 +3,7 @@
 Summary:	Try to generate a stack dump from a core file
 Name:		perl-%{rname}
 Version:	1.3
-Release:	%mkrel 3
+Release:	%mkrel 5
 License:	Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/Devel-CoreStack/
