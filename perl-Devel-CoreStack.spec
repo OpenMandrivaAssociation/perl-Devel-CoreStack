@@ -1,32 +1,34 @@
-%define rname Devel-CoreStack
+%define upstream_name    Devel-CoreStack
+%define upstream_version 1.3
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Try to generate a stack dump from a core file
-Name:		perl-%{rname}
-Version:	1.3
-Release:	%mkrel 6
 License:	Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/Devel-CoreStack/
-Source0:	http://search.cpan.org/CPAN/authors/id/A/AD/ADESC/Devel-CoreStack-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/Devel-CoreStack/
+Source0:    http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 try to generate a stack dump from a core file.
 
 %prep
-
-%setup -q -n %{rname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 perl Makefile.PL INSTALLDIRS="vendor" < /dev/null
-
 %make
+
+%check
+%make test
 
 %install
 rm -rf %{buildroot}
-
 %makeinstall_std
 
 %clean
@@ -36,5 +38,3 @@ rm -rf %{buildroot}
 %defattr(-, root, root, 0755)
 %{perl_vendorlib}/Devel/CoreStack.pm
 %{_mandir}/man3/*
-
-
