@@ -8,7 +8,7 @@ Release:	5
 Summary:	Try to generate a stack dump from a core file
 License:	Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/Devel-CoreStack/
+Url:		https://search.cpan.org/dist/Devel-CoreStack/
 Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel
