@@ -1,15 +1,13 @@
 %define upstream_name    Devel-CoreStack
-%define upstream_version 1.3
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	1.3
+Release:	6
 
 Summary:	Try to generate a stack dump from a core file
 License:	Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/Devel-CoreStack/
-Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/Devel-CoreStack/
+Source0:	http://www.cpan.org/modules/by-module/Devel/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -19,7 +17,7 @@ BuildArch:	noarch
 Try to generate a stack dump from a core file.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS="vendor" < /dev/null
@@ -43,9 +41,7 @@ perl Makefile.PL INSTALLDIRS="vendor" < /dev/null
 
 * Fri Feb 12 2010 Jérôme Quelin <jquelin@mandriva.org> 1.300.0-1mdv2011.0
 + Revision: 504941
-- rebuild using %%perl_convert_version
-
-* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.3-6mdv2010.0
+- rebuild using %1.3 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.3-6mdv2010.0
 + Revision: 430409
 - rebuild
 
